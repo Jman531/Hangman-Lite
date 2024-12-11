@@ -10,7 +10,7 @@
 
             List<string> guessedLetters = new List<string>();
 
-            List<string> secretWords = new List<string>() {"COMPUTER", "TABLE", "TRIANGLE", "SQUARE", "TREE", "MOON", "LENGTH"};
+            List<string> secretWords = new List<string>() {"COMPUTER", "TABLE", "TRIANGLE", "SQUARE", "TREE", "MOON", "LENGTH", "SCHOOL", "UNIVERSITY", "COLLEGE", "TRUMPET", "MUSIC"};
 
             Random generator = new Random();
 
@@ -43,6 +43,18 @@
                 {
                     DrawHangmanGuessThree();
                 }
+                else if (incorrectGuesses == 4)
+                {
+                    DrawHangmanGuessFour();
+                }
+                else if (incorrectGuesses == 5)
+                {
+                    DrawHangmanGuessFive();
+                }
+                else if (incorrectGuesses == 6)
+                {
+                    DrawHangmanGuessSix();
+                }
 
                 Console.WriteLine();
 
@@ -50,7 +62,7 @@
 
                 Console.WriteLine();
 
-                Console.Write("You have " + (3 - incorrectGuesses) + " incorrect guesses left! The letters you have already guessed are: ");
+                Console.Write("You have " + (6 - incorrectGuesses) + " incorrect guesses left! The letters you have already guessed are: ");
                 foreach (string letter in guessedLetters)
                 {
                     Console.Write(letter + ", ");
@@ -147,12 +159,24 @@
                     {
                         DrawHangmanGuessThree();
                     }
+                    else if (incorrectGuesses == 4)
+                    {
+                        DrawHangmanGuessFour();
+                    }
+                    else if (incorrectGuesses == 5)
+                    {
+                        DrawHangmanGuessFive();
+                    }
+                    else if (incorrectGuesses == 6)
+                    {
+                        DrawHangmanGuessSix();
+                    }
 
                     Console.WriteLine();
 
                     Console.WriteLine(displayWord);
                 }
-                else if (incorrectGuesses == 3)
+                else if (incorrectGuesses == 6)
                 {
                     Console.WriteLine("You ran out of incorrect guesses before guessing the word... The word was " + secretWord + ".");
                     done = true;
@@ -215,8 +239,30 @@
             Console.WriteLine("  +---+");
             Console.WriteLine("  |   |");
             Console.WriteLine("  O   |");
-            Console.WriteLine(" /|   |");
+            Console.WriteLine(" /|\\  |");
             Console.WriteLine("      |");
+            Console.WriteLine("      |");
+            Console.WriteLine("=========");
+        }
+
+        static void DrawHangmanGuessFive()
+        {
+            Console.WriteLine("  +---+");
+            Console.WriteLine("  |   |");
+            Console.WriteLine("  O   |");
+            Console.WriteLine(" /|\\  |");
+            Console.WriteLine(" /    |");
+            Console.WriteLine("      |");
+            Console.WriteLine("=========");
+        }
+
+        static void DrawHangmanGuessSix()
+        {
+            Console.WriteLine("  +---+");
+            Console.WriteLine("  |   |");
+            Console.WriteLine("  O   |");
+            Console.WriteLine(" /|\\  |");
+            Console.WriteLine(" / \\  |");
             Console.WriteLine("      |");
             Console.WriteLine("=========");
         }
